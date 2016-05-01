@@ -27,14 +27,14 @@ static String getListOfActiveBits( const BitArray& b )
 int main( int argc, char* argv[] )
 {
     AudioDeviceManager* dm = new AudioDeviceManager();
-    
+
     const OwnedArray< AudioIODeviceType >* deviceTypes = &( dm->getAvailableDeviceTypes() );
-    
+
     for ( auto& t : *( deviceTypes ) ) {
         DBG( "+-- device type  : ------------+" );
         DBG( "  " + t->getTypeName() );
         auto deviceNames = t->getDeviceNames();
-        
+
         for ( auto& name : deviceNames ) {
             DBG( "    +-- device name  : ------------+" );
             DBG( "      " + name );
@@ -42,9 +42,11 @@ int main( int argc, char* argv[] )
     }
 
     // initialize audio with the following requirements:
-    auto result = dm->initialise( 2, 2, nullptr, true );
-    
-    if ( ! result.isEmpty() ) {
+    auto result =
+      dm->initialise( /* num inputs */ 2, /* num outputs */ 2, /* xml settings file */ nullptr,
+                      /* select default device on failure */ true );
+
+    if ( !result.isEmpty() ) {
         DBG( "Error on initialize : " + result );
     }
 
@@ -73,7 +75,7 @@ int main( int argc, char* argv[] )
     } else {
         logMessage( "No audio device open" );
     }
-    
+
     delete dm;
 
     return 0;
