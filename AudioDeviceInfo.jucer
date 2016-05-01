@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="kJ2umX" name="AudioDeviceInfo" projectType="consoleapp" version="1.0.0"
+              bundleIdentifier="com.terraswarm.AudioDeviceInfo" includeBinaryInAppConfig="1"
+              jucerVersion="4.2.1" companyName="TerraSwarm" companyWebsite="http://www.terraswarm.org/"
+              companyEmail="ilyaforpresident@gmail.com">
+  <MAINGROUP id="hvgqT7" name="AudioDeviceInfo">
+    <GROUP id="{7DCD4660-A9B5-C96D-83A4-959BA54F52E9}" name="Source">
+      <FILE id="WHsSe2" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+    </GROUP>
+  </MAINGROUP>
+  <EXPORTFORMATS>
+    <XCODE_MAC targetFolder="Builds/MacOSX">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" isDebug="1" optimisation="1" targetName="AudioDeviceInfo"/>
+        <CONFIGURATION name="Release" isDebug="0" optimisation="3" targetName="AudioDeviceInfo"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../../../ts/didl/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../../ts/didl/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="../../../ts/didl/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../../ts/didl/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../../ts/didl/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../../../ts/didl/JUCE/modules"/>
+      </MODULEPATHS>
+    </XCODE_MAC>
+    <LINUX_MAKE targetFolder="Builds/LinuxMakefile">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" libraryPath="/usr/X11R6/lib/" isDebug="1" optimisation="1"
+                       targetName="AudioDeviceInfo"/>
+        <CONFIGURATION name="Release" libraryPath="/usr/X11R6/lib/" isDebug="0" optimisation="3"
+                       targetName="AudioDeviceInfo"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../../../ts/didl/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../../ts/didl/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="../../../ts/didl/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../../ts/didl/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../../ts/didl/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../../../ts/didl/JUCE/modules"/>
+      </MODULEPATHS>
+    </LINUX_MAKE>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0"/>
+  </MODULES>
+  <JUCEOPTIONS/>
+</JUCERPROJECT>
