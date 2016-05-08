@@ -33,12 +33,23 @@ int main( int argc, char* argv[] )
     for ( auto& t : *( deviceTypes ) ) {
         DBG( "+-- device type  : ------------+" );
         DBG( "  " + t->getTypeName() );
-        auto deviceNames = t->getDeviceNames();
-
-        for ( auto& name : deviceNames ) {
-            DBG( "    +-- device name  : ------------+" );
-            DBG( "      " + name );
+        t->scanForDevices();
+        if ( t->hasSeparateInputsAndOutputs() ) {
+            DBG( "+-- inputs   : ------------+" );
+            auto deviceNames = t->getDeviceNames( true );
+            for ( auto& name : deviceNames ) {
+                DBG( "    +-- device name  : ------------+" );
+                DBG( "      " + name );
+            }
+            DBG( "+-- outputs  : ------------+" );
+            deviceNames = t->getDeviceNames( false );
+            for ( auto& name : deviceNames ) {
+                DBG( "    +-- device name  : ------------+" );
+                DBG( "      " + name );
+            }
+        } else {
         }
+        DBG( "has separate inputs and outputs : " << t->hasSeparateInputsAndOutputs() );
     }
 
     // initialize audio with the following requirements:
