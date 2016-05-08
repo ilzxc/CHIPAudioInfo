@@ -15,7 +15,7 @@ void SimpleCallback::audioDeviceIOCallback( const float** inputChannelData, int 
                                             int numSamples )
 {
     auto localPhase = phase;
-    for ( int chan = 0; chan < numOutputChannels; ++chan ) {
+    for ( int chan = 0; chan < 2; ++chan ) {
         float* const channelData = outputChannelData[ chan ];
         localPhase = phase;
 
