@@ -10,6 +10,7 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "SimpleCallback.h"
+#include <unistd.h>
 
 #define logMessage DBG
 
@@ -91,7 +92,7 @@ int main( int argc, char* argv[] )
 
     dm->addAudioCallback( callback );
 
-    sleep( 10 ); // 10 seconds of audio
+    sleep( 3 ); // 3 seconds of audio
 
     dm->removeAudioCallback( callback );
     delete callback;
