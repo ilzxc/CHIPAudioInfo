@@ -50,6 +50,7 @@ endif
 
 OBJECTS := \
   $(OBJDIR)/Main_90ebc5c2.o \
+  $(OBJDIR)/SimpleCallback_6c120c20.o \
   $(OBJDIR)/juce_audio_basics_6b797ca1.o \
   $(OBJDIR)/juce_audio_devices_a742c38b.o \
   $(OBJDIR)/juce_audio_formats_5a29c68a.o \
@@ -77,6 +78,11 @@ strip:
 $(OBJDIR)/Main_90ebc5c2.o: ../../Source/Main.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling Main.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/SimpleCallback_6c120c20.o: ../../Source/SimpleCallback.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling SimpleCallback.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/juce_audio_basics_6b797ca1.o: ../../JuceLibraryCode/juce_audio_basics.cpp

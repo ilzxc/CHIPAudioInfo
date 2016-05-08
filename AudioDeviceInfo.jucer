@@ -7,6 +7,10 @@
   <MAINGROUP id="hvgqT7" name="AudioDeviceInfo">
     <GROUP id="{7DCD4660-A9B5-C96D-83A4-959BA54F52E9}" name="Source">
       <FILE id="WHsSe2" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+      <FILE id="cB7wyR" name="SimpleCallback.cpp" compile="1" resource="0"
+            file="Source/SimpleCallback.cpp"/>
+      <FILE id="TYs7NC" name="SimpleCallback.h" compile="0" resource="0"
+            file="Source/SimpleCallback.h"/>
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>

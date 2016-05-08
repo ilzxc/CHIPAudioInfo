@@ -9,6 +9,7 @@
 */
 
 #include "../JuceLibraryCode/JuceHeader.h"
+#include "SimpleCallback.h"
 
 #define logMessage DBG
 
@@ -27,6 +28,7 @@ static String getListOfActiveBits( const BitArray& b )
 int main( int argc, char* argv[] )
 {
     AudioDeviceManager* dm = new AudioDeviceManager();
+    auto callback = new SimpleCallback();
 
     const OwnedArray< AudioIODeviceType >* deviceTypes = &( dm->getAvailableDeviceTypes() );
 
@@ -86,6 +88,13 @@ int main( int argc, char* argv[] )
     } else {
         logMessage( "No audio device open" );
     }
+
+    dm->addAudioCallback( callback );
+
+    sleep( 10 ); // 10 seconds of audio
+
+    dm->removeAudioCallback( callback );
+    delete callback;
 
     delete dm;
 
