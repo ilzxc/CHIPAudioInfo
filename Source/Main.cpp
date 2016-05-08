@@ -92,7 +92,9 @@ int main( int argc, char* argv[] )
 
     dm->addAudioCallback( callback );
 
-    sleep( 3 ); // 3 seconds of audio
+//    sleep( 3 ); // 3 seconds of audio
+    while ( true ) {
+    }
 
     dm->removeAudioCallback( callback );
     delete callback;
