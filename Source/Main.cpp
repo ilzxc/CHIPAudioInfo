@@ -57,7 +57,7 @@ int main( int argc, char* argv[] )
 
     // initialize audio with the following requirements:
     auto result =
-      dm->initialise( /* num inputs */ 2, /* num outputs */ 2, /* xml settings file */ nullptr,
+      dm->initialise( /* num inputs */ 0, /* num outputs */ 2, /* xml settings file */ nullptr,
                       /* select default device on failure */ true );
 
     if ( !result.isEmpty() ) {
@@ -92,9 +92,9 @@ int main( int argc, char* argv[] )
 
     dm->addAudioCallback( callback );
 
-//    sleep( 3 ); // 3 seconds of audio
-    while ( true ) {
-    }
+    sleep( 3 ); // 3 seconds of audio
+//    while ( true ) {
+//    }
 
     dm->removeAudioCallback( callback );
     delete callback;
