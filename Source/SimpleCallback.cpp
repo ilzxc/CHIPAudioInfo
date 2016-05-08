@@ -32,8 +32,9 @@ void SimpleCallback::audioDeviceIOCallback( const float** inputChannelData, int 
 void SimpleCallback::audioDeviceAboutToStart( AudioIODevice* device )
 {
     sr = device->getCurrentSampleRate();
+    DBG(" sample rate set to " << sr );
     phase = 0;
-    frequency = 440.0;
+    frequency = 220.0;
     phaseDelta = ( 2.0 * double_Pi * frequency / sr );
 }
 
